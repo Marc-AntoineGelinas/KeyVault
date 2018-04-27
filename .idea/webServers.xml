@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f4a1f71f-78ff-4b35-be8e-3287efe981d8" name="1170592" url="http://web2.cegepat.qc.ca/~1170592/">
+        <fileTransfer host="web2.cegepat.qc.ca" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="0207faa9-5c5b-45e9-bee6-6ff3a367923e" name="Simon" url="http://marc.simon987.net/">
+        <fileTransfer host="marc.simon987.net" port="21" rootFolder="/home/marc/www">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

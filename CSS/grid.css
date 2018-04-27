@@ -1,0 +1,51 @@
+.main-Grid {
+    width:100%;
+    height:100%;
+    display: grid;
+    grid-template-areas:    'headerL headerC headerR'
+    'bodyL bodyC bodyR'
+    'footerL footerC footerR';
+
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 5% 75% 20%;
+    grid-grap: 1%;
+    padding: 0;
+    margin: 0;
+}
+
+
+.main-Grid > * {
+    align-self: center;
+    justify-self: center;
+}
+
+.headerL {
+    grid-area: headerL;
+}
+.headerC {
+    grid-area: headerC;
+}
+.headerR {
+    grid-area: headerR;
+}
+.bodyL {
+    grid-area: bodyL;
+}
+.bodyC {
+    grid-area: bodyC;
+}
+.bodyR {
+    grid-area: bodyR;
+}
+.bodyR label {
+    display: block;
+}
+.footerL {
+    grid-area: footerL;
+}
+.footerC {
+    grid-area: footerC;
+}
+.footerR {
+    grid-area: footerR;
+}
