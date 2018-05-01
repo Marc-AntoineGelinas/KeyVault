@@ -2,50 +2,54 @@
     width:100%;
     height:100%;
     display: grid;
-    grid-template-areas:    'headerL headerC headerR'
+    grid-template-areas:
+    'headerL headerC headerR'
     'bodyL bodyC bodyR'
     'footerL footerC footerR';
 
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 5% 75% 20%;
-    grid-grap: 1%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 10% auto 15%;
     padding: 0;
     margin: 0;
+
+
+    background-color: black;
 }
 
 
-.main-Grid > * {
-    align-self: center;
-    justify-self: center;
+
+#headerL a{
+    position:relative;
+    top:15%;
+    left:10%;
+    font-size: 30px;
+}
+#headerR a{
+    position:relative;
+    top:15%;
+    left:10%;
+    font-size: 30px;
+}
+#bodyL {
+    text-align:center;
 }
 
-.headerL {
-    grid-area: headerL;
-}
-.headerC {
-    grid-area: headerC;
-}
-.headerR {
-    grid-area: headerR;
-}
-.bodyL {
-    grid-area: bodyL;
-}
-.bodyC {
-    grid-area: bodyC;
-}
-.bodyR {
-    grid-area: bodyR;
-}
-.bodyR label {
+
+#bodyR label {
     display: block;
+    padding:1%;
+    font-size: 15px;
 }
-.footerL {
-    grid-area: footerL;
+
+
+#bodyL, #bodyC, #bodyR {
+    justify-self:stretch;
+    align-self:center;
 }
-.footerC {
-    grid-area: footerC;
-}
-.footerR {
-    grid-area: footerR;
+
+#footerC a, #footerR a, #footerL a {
+    text-align:center;
+    position:relative;
+    top:10%;
+    font-size: 25px;
 }

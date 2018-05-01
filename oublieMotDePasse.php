@@ -13,19 +13,19 @@ include_once 'Include/genererSession.include.php';
 </head>
 
 <body class="main-Grid">
-    <div class="headerL">
-        <a style="font-family: impact; font-size:larger;">Keyvault</a>
+    <div id="headerL">
+        <a>Keyvault</a>
     </div>
 
-    <div class="headerC">
-
-    </div>
-
-    <div class="headerR">
+    <div id="headerC">
 
     </div>
 
-    <div class="bodyL">
+    <div id="headerR">
+
+    </div>
+
+    <div id="bodyL">
         <?php
         if (isset($_SESSION['Notification'])) {
             echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
@@ -34,7 +34,7 @@ include_once 'Include/genererSession.include.php';
         ?>
     </div>
 
-    <div class="bodyC">
+    <div id="bodyC">
         <h1>Entrez votre l'adresse e-mail du compte pour lequel vous souhaitez réinitialiser le mot de passe.</h1>
         <Form name="formOublie" method="post" action="Redirect/validerOublie.redirect.php">
             <label for="email">Adresse e-mail :
@@ -44,19 +44,20 @@ include_once 'Include/genererSession.include.php';
         </Form>
     </div>
 
-    <div class="bodyR">
+    <div id="bodyR">
 
     </div>
 
-    <div class="footerL">
+    <div id="footerL">
 
     </div>
 
-    <div class="footerC">
-
+    <div id="footerC">
+        <p>Fait par Marc-Antoine Gélinas</p>
+        <p>Dans le cadre du cours Projet Web 2018</p>
     </div>
 
-    <div class="footerR">
+    <div id="footerR">
 
     </div>
 </body>

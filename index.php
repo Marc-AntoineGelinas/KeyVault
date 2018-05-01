@@ -12,50 +12,56 @@ include_once 'Include/genererSession.include.php';
     <link rel="stylesheet" type="text/css" href="CSS/grid.css">
 </head>
 <body class="main-Grid">
-    <div class="headerL">
-        <a style="font-family: impact; font-size:larger;">Keyvault</a>
-    </div>
-    <div class="headerC">
+            <div id="headerL">
+                <a>Keyvault</a>
+            </div>
 
-    </div>
-    <div class="headerR">
+            <div id="headerC">
+            </div>
 
-    </div>
-    <div class="bodyL">
-        <?php
-        if (isset($_SESSION['Notification'])) {
-            echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
-            unset($_SESSION['Notification']);
-        }
-        ?>
-    </div>
+            <div id="headerR">
+            </div>
 
-    <div class="bodyC centerDefault">
-        <h1>Connexion</h1>
-        <Form name="formLogin" method="post" action="Redirect/validerSession.redirect.php">
-            <label for="email">Adresse e-mail :
-                <input type="text" name="email" id="email">
-            </label>
-            <label for="pass">Mot de passe :
-                <input type="password" name="pass" id="pass">
-            </label>
-            <button onclick="formLogin.submit()">Login</button>
-        </Form>
-    </div>
 
-    <div class="bodyR">
-    </div>
+            <?php
+            if (isset($_SESSION['Notification'])) {
+                echo "<div id='bodyL' class='section'>";
+                echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
+                unset($_SESSION['Notification']);
+            }
+            else
+                echo "<div id='bodyL'>";
+            ?>
+            </div>
 
-    <div class="footerL">
-    </div>
+        <div id="bodyC" class="section centerDefault">
+            <a class="titre">Connexion</a>
+            <Form name="formLogin" method="post" action="Redirect/validerSession.redirect.php">
+                <label for="email">Adresse e-mail :
+                    <input type="text" name="email" id="email">
+                </label>
+                <label for="pass">Mot de passe :
+                    <input type="password" name="pass" id="pass">
+                </label>
+                <button onclick="formLogin.submit()">Connecter</button>
+                <a href="nouveauCompte.php">Pas de compte?</a>
+                <a href="oublieMotDePasse.php">Oublier votre compte?</a>
+            </Form>
+        </div>
 
-    <div class="footerC">
-        <a href="nouveauCompte.php">Pas de compte?</a>
-        <br/>
-        <a href="oublieMotDePasse.php">Oublier votre compte?</a>
-    </div>
+        <div id="bodyR">
+        </div>
 
-    <div class="footerR">
-    </div>
+        <div id="footerL">
+
+        </div>
+
+        <div id="footerC">
+            <a>Fait par Marc-Antoine Gélinas</a>
+            <a>Dans le cadre du cours Projet Web 2018</a>
+        </div>
+
+        <div id="footerR">
+        </div>
 </body>
 </html>

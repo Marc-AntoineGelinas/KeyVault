@@ -13,28 +13,31 @@ include_once 'Include/genererSession.include.php';
     <link rel="stylesheet" type="text/css" href="CSS/grid.css">
 </head>
 <body class="main-Grid">
-<div class="headerL">
-    <a style="font-family: impact; font-size:larger;">Keyvault</a>
+<div id="headerL">
+    <a>Keyvault</a>
 </div>
 
-<div class="headerC">
-
-</div>
-
-<div class="headerR">
+<div id="headerC">
 
 </div>
 
-<div class="bodyL">
+<div id="headerR">
+
+</div>
+
+
     <?php
     if (isset($_SESSION['Notification'])) {
+        echo "<div id='bodyL' class='section'>";
         echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
         unset($_SESSION['Notification']);
     }
+    else
+        echo "<div id='bodyL'>";
     ?>
 </div>
 
-<div class="bodyC centerDefault">
+<div id="bodyC" class="section centerDefault">
     <h1>Création de votre compte</h1>
     <Form name="formNouveauCompte" method="post" action="Redirect/validerNouveauCompte.redirect.php">
         <label for="email">Adresse e-mail :
@@ -50,9 +53,10 @@ include_once 'Include/genererSession.include.php';
         </label>
         <button id="btnAjout" onclick="formNouveauCompte.submit()" disabled>Créer</button>
     </Form>
+    <a href="index.php">Déjà un compte? Appuyer ici!</a>
 </div>
 
-<div class="bodyR">
+<div id="bodyR" class="section">
     <label id="vEmail">L'addresse e-mail est valide</label>
     <label id="vMinMax">Votre mot de passe doit contenir entre 10 et 32 caractères</label>
     <label id="vLowercase">Votre mot de passe doit contenir un caractère lowercase</label>
@@ -62,15 +66,16 @@ include_once 'Include/genererSession.include.php';
     <label id="vConfirmer">Votre confirmation concorde avec le mot de passe</label>
 </div>
 
-<div class="footerL">
+<div id="footerL">
 
 </div>
 
-<div class="footerC">
-    <a href="index.php">Déjà un compte? Appuyer ici!</a>
+<div id="footerC">
+    <a>Fait par Marc-Antoine Gélinas</a>
+    <a>Dans le cadre du cours Projet Web 2018</a>
 </div>
 
-<div class="footerR">
+<div id="footerR">
 
 </div>
 </body>

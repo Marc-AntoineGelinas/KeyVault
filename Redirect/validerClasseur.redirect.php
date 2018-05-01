@@ -25,10 +25,62 @@ else
     }
     else{
         ?>
-        <h1>Entrer le mot de passe du classeur</h1>
-        <form  name="formLogin" method="post" action="validerMDPClasseur.redirect.php">
-            <input type="password" name="pass" id="pass" placeholder="Mot de passe">
-        </form>
+
+        <html>
+        <head>
+            <meta charset="UTF-8">
+
+            <title>Key Vault - Accueil</title>
+            <link rel="stylesheet" type="text/css" href="../CSS/main.css">
+            <link rel="stylesheet" type="text/css" href="../CSS/grid.css">
+        </head>
+        <body class="main-Grid">
+        <div id="headerL">
+            <a>Keyvault</a>
+        </div>
+
+        <div id="headerC">
+        </div>
+
+        <div id="headerR">
+        </div>
+
+
+        <?php
+        if (isset($_SESSION['Notification'])) {
+            echo "<div id='bodyL' class='section'>";
+            echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
+            unset($_SESSION['Notification']);
+        }
+        else
+            echo "<div id='bodyL'>";
+        ?>
+        </div>
+
+        <div id="bodyC" class="section centerDefault">
+            <a class="titre">Entrer le mot de passe du classeur</a>
+            <form  name="formLogin" method="post" action="validerMDPClasseur.redirect.php">
+                <input type="password" name="pass" id="pass" placeholder="Mot de passe">
+            </form>
+        </div>
+
+        <div id="bodyR">
+        </div>
+
+        <div id="footerL">
+
+        </div>
+
+        <div id="footerC">
+            <a>Fait par Marc-Antoine Gélinas</a>
+            <a>Dans le cadre du cours Projet Web 2018</a>
+        </div>
+
+        <div id="footerR">
+        </div>
+        </body>
+        </html>
+
         <?php
     }
 }

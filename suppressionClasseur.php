@@ -27,28 +27,30 @@ $requete = new Gestionbd();
 
 
     <body class="main-Grid">
-        <div class="headerL">
-            <a style="font-family: impact; font-size:larger;">Keyvault</a>
+        <div id="headerL">
+            <a>Keyvault</a>
         </div>
 
-        <div class="headerC">
-
-        </div>
-
-        <div class="headerR">
+        <div id="headerC">
 
         </div>
 
-        <div class="bodyL">
-            <?php
-            if (isset($_SESSION['Notification'])) {
-                echo '<h1 style="columns: ;color:red">' . $_SESSION['Notification'] . '</h1>';
-                unset($_SESSION['Notification']);
-            }
-            ?>
+        <div id="headerR">
+
         </div>
 
-        <div class="bodyC">
+        <?php
+        if (isset($_SESSION['Notification'])) {
+            echo "<div id='bodyL' class='section'>";
+            echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
+            unset($_SESSION['Notification']);
+        }
+        else
+            echo "<div id='bodyL'>";
+        ?>
+        </div>
+
+        <div id="bodyC" class="centerDefault section">
             <h1>Êtes-vous certain de vouloir supprimer : <?php echo $nom ?></h1>
             <h2 style="color:red;">Attention! Une fois le classeur effacé, il ne pourra pas être récupperé!</h2>
             <br/>
@@ -74,19 +76,20 @@ $requete = new Gestionbd();
             </form>
         </div>
 
-        <div class="bodyR">
+        <div id="bodyR">
 
         </div>
 
-        <div class="footerL">
+        <div id="footerL">
 
         </div>
 
-        <div class="footerC">
-
+        <div id="footerC">
+            <a>Fait par Marc-Antoine Gélinas</a>
+            <a>Dans le cadre du cours Projet Web 2018</a>
         </div>
 
-        <div class="footerR">
+        <div id="footerR">
 
         </div>
     </body>

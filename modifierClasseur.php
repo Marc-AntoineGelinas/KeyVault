@@ -23,19 +23,19 @@ $nom = $encryption->encrypterInfos($resultat['nom'], "d");
     <script type="text/javascript" src="Javascript/validationClasseur.ajax.js"></script>
 </head>
 <body class="main-Grid">
-<div class="headerL">
-    <a style="font-family: impact; font-size:larger;">Keyvault</a>
+<div id="headerL">
+    <a>Keyvault</a>
 </div>
 
-<div class="headerC">
-
-</div>
-
-<div class="headerR">
+<div id="headerC">
 
 </div>
 
-<div class="bodyL">
+<div id="headerR">
+
+</div>
+
+<div id="bodyL">
     <?php
     if (isset($_SESSION['Notification'])) {
         echo '<h1 style="columns: ;color:red">' . $_SESSION['Notification'] . '</h1>';
@@ -44,7 +44,7 @@ $nom = $encryption->encrypterInfos($resultat['nom'], "d");
     ?>
 </div>
 
-<div class="bodyC">
+<div id="bodyC">
     <Form name="formModifClasseur" method="post" action="Redirect/validerModifClasseur.redirect.php">
         <input type="hidden" id="idClasseur" name="idClasseur" value="<?php echo $resultat["id"] ?>">
         <label for="nom">Nom du classeur :
@@ -63,7 +63,7 @@ $nom = $encryption->encrypterInfos($resultat['nom'], "d");
     </Form>
 </div>
 
-<div class="bodyR">
+<div id="bodyR">
     <label id="vNom">Le nom de classeur est valide</label>
     <label id="vMinMax">Votre mot de passe doit contenir entre 10 et 32 caractères</label>
     <label id="vLowercase">Votre mot de passe doit contenir un caractère lowercase</label>
@@ -73,15 +73,16 @@ $nom = $encryption->encrypterInfos($resultat['nom'], "d");
     <label id="vConfirmer">Votre confirmation concorde avec le mot de passe</label>
 </div>
 
-<div class="footerL">
+<div id="footerL">
 
 </div>
 
-<div class="footerC">
-
+<div id="footerC">
+    <p>Fait par Marc-Antoine Gélinas</p>
+    <p>Dans le cadre du cours Projet Web 2018</p>
 </div>
 
-<div class="footerR">
+<div id="footerR">
 
 </div>
 </body>

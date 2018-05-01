@@ -3,6 +3,29 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: Georgia;
+}
+a {
+    margin:1%;
+    padding:1%;
+    display: block;
+    color: #878383;
+    transition: color 0.5s ease-out;
+}
+a:hover {
+    color: #ffffff;
+    cursor: default;
+}
+
+button {
+    border-color:black;
+    border-radius :15px;
+    background-color: white;
+    color:black;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 2%;
 }
 
 .centerDefault {
@@ -14,6 +37,8 @@ html {
     clear: left;
     width: 100%;
     text-align: right;
+    position:relative;
+    left:-20%;
     padding-top: 0.5%;
     padding-bottom:0.5%;
 }
@@ -23,45 +48,57 @@ html {
 }
 
 .Classeur div {
-    display: inline-block;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-right: auto;
-    margin-left: auto;
-    text-align:center;
+
 }
 
 .Classeur div div {
-    display: block;
-}
-
-.Classeur div label {
-    font-weight: bold;
-    font-size: larger;
+    border-style:solid;
+    border-radius: 15px;
+    border-color: black;
 }
 
 .Classeur div div form {
     display: inline-block;
 }
 
-
 .ListeClasseur div {
-    display: block;
     margin-top: 10px;
     margin-bottom: 10px;
-    text-align:center;
+    border-style:solid;
+    border-radius: 15px;
+    border-color: black;
 }
 
-.ListeClasseur div label {
-    display:block;
-    font-weight: bold;
-    font-size: larger;
-}
 
 .ListeClasseur div form {
     display: inline;
 }
 
+.section {
+    padding:  1%;
+    border-style: solid;
+    background-color: white;
+    border-color: black;
+    border-radius: 15px;
+    border-color: #878383;
+}
+
+.section a:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.titre {
+    text-align:center;
+    font-size:25px;
+    font-weight:bold;
+    white-space: nowrap;
+    overflow:hidden;
+    padding-left: 5%;
+    padding-right: 5%;
+}
 
 
 

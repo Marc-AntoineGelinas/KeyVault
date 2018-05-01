@@ -15,48 +15,52 @@ $encryption = new encryption();
         <link rel="stylesheet" type="text/css" href="CSS/grid.css">
     </head>
     <body class="main-Grid">
-        <div class="headerL">
-            <a style="font-family: impact; font-size:larger;">Keyvault</a>
+        <div id="headerL">
+            <a>Keyvault</a>
         </div>
 
-        <div class="headerC">
+        <div id="headerC">
 
         </div>
 
-        <div class="headerR">
-            <label style="float:right;"><?php echo $encryption->encrypterInfos($_SESSION['usager'], "d"); ?></label>
+        <div id="headerR">
+            <a><?php echo $encryption->encrypterInfos($_SESSION['usager'], "d"); ?></a>
         </div>
 
-        <div class="bodyL">
             <?php
             if (isset($_SESSION['Notification'])) {
-                echo '<h1 style="columns: ;r:red">' . $_SESSION['Notification'] . '</h1>';
+                echo "<div id='bodyL' class='section'>";
+                echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
                 unset($_SESSION['Notification']);
             }
+            else
+                echo "<div id='bodyL'>";
             ?>
 
         </div>
 
-        <div class="bodyC ListeClasseur">
-            <h1 style="font-size:30px; font-weight:bold;">Classeur principal</h1>
+        <div id="bodyC" class="section ListeClasseur centerDefault">
+            <a class="titre">Classeur principal</a>
                 <?php
                 include_once 'Include/afficherClasseurs.include.php';
                 ?>
+            <a href="ajouterClasseur.php">Ajouter un classeur</a>
         </div>
 
-        <div class="bodyR">
-
-        </div>
-
-        <div class="footerL">
+        <div id="bodyR">
 
         </div>
 
-        <div class="footerC">
-                <a href="ajouterClasseur.php">Ajouter un classeur</a>
+        <div id="footerL">
+
         </div>
 
-        <div class="footerR">
+        <div id="footerC">
+            <a>Fait par Marc-Antoine Gélinas</a>
+            <a>Dans le cadre du cours Projet Web 2018</a>
+        </div>
+
+        <div id="footerR">
 
         </div>
     </body>

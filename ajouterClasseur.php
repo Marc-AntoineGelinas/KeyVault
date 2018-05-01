@@ -1,9 +1,9 @@
 <?php
 include_once 'Include/genererSession.include.php';
 include_once 'Include/validerAccesPage.include.php';
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+include_once 'Classe/encryption.classe.php';
+$encryption = new encryption();
+
 ?>
 
 <!DOCTYPE html>
@@ -15,38 +15,42 @@ error_reporting(E_ALL);
     <script type="text/javascript" src="Javascript/validationMdp.js"></script>
     <script type="text/javascript" src="Javascript/validationClasseur.ajax.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/main.css">
+    <link rel="stylesheet" type="text/css" href="CSS/grid.css">
 </head>
 
 
 <body class="main-Grid">
-<div class="headerL">
-    <a style="font-family: impact; font-size:larger;">Keyvault</a>
+<div id="headerL">
+    <a>Keyvault</a>
 </div>
 
-<div class="headerC">
-
-</div>
-
-<div class="headerR">
+<div id="headerC">
 
 </div>
 
-<div class="bodyL">
-    <?php
-    if (isset($_SESSION['Notification'])) {
-        echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
-        unset($_SESSION['Notification']);
-    }
-    ?>
+<div id="headerR">
+    <a><?php echo $encryption->encrypterInfos($_SESSION['usager'], "d"); ?></a>
 </div>
 
-<div class="bodyC">
+<?php
+if (isset($_SESSION['Notification'])) {
+    echo "<div id='bodyL' class='section'>";
+    echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
+    unset($_SESSION['Notification']);
+}
+else
+    echo "<div id='bodyL'>";
+?>
+</div>
+
+<div id="bodyC" class="section centerDefault">
+    <a class="titre">Informations du nouveau classeur</a>
     <Form name="formNouveauClasseur" method="post" action="Redirect/validerNouveauClasseur.redirect.php">
         <label for="nom">Nom du classeur :
             <input type="text" name="Nom" id="nom" onkeyup="validationNomClasseur(this.value)">
         </label>
         <label type="hidden" id="hNom"></label>
-        <label for="pass">Mot de passe :
+        <label for="pass">Mot de passe (optionnel) :
             <input type="password" name="Pass" id="pass" onkeyup="confirmationCreationClasseur()">
         </label>
         <label for="pass2">Confirmer le mot de passe :
@@ -56,7 +60,8 @@ error_reporting(E_ALL);
     </Form>
 </div>
 
-<div class="bodyR">
+<div id="bodyR" class="section">
+    <a class="titre">Validations</a>
     <label id="vNom">Le nom de classeur est valide</label>
     <label id="vMinMax">Votre mot de passe doit contenir entre 10 et 32 caractères</label>
     <label id="vLowercase">Votre mot de passe doit contenir un caractère lowercase</label>
@@ -66,15 +71,16 @@ error_reporting(E_ALL);
     <label id="vConfirmer">Votre confirmation concorde avec le mot de passe</label>
 </div>
 
-<div class="footerL">
+<div id="footerL">
 
 </div>
 
-<div class="footerC">
-
+<div id="footerC">
+    <a>Fait par Marc-Antoine Gélinas</a>
+    <a>Dans le cadre du cours Projet Web 2018</a>
 </div>
 
-<div class="footerR">
+<div id="footerR">
 
 </div>
 </body>

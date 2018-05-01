@@ -12,18 +12,20 @@ $resultat = $requete->fetchall(PDO::FETCH_ASSOC);
 
 foreach($resultat as $classeur){
     echo "<div>";
-        echo "<label>" . $encryption->encrypterInfos($classeur['nom'],"d");
+        echo "<a class='titre'>" . $encryption->encrypterInfos($classeur['nom'],"d") . "</a>";
         echo '<form name="formClasseur" method="post" action="Redirect/validerClasseur.redirect.php">';
             echo "<input type='hidden' id='classeur' name='classeur' value=' " . $classeur['id'] . "''></input>";
-            echo "<input type='submit' onclick='formClasseur.submit()' value='Accéder''></input>";
+            echo "<button onclick='formClasseur.submit()'>Accèder</button>";
         echo '</form>';
+
         echo "<form name='formSupprClasseur' method='post' action='suppressionClasseur.php'>";
             echo "<input type='hidden' id='idClasseur' name='nomClasseur' value=' " . $classeur['id'] . "'>";
-            echo "<input type='submit' value='Supprimer'>";
+            echo "<button onclick='formSupprClasseur.submit()'>Supprimer</button>";
         echo "</form>";
+
         echo "<form name='formModClasseur' method='post' action='modifierClasseur.php'>";
             echo "<input type='hidden' id='idClasseur' name='nomClasseur' value=' " . $classeur['id'] . "'>";
-            echo "<input type='submit' value='Modifier'>";
+            echo "<button onclick='formModClasseur.submit()'>Modifier</button>";
         echo "</form>";
     echo "</div>";
 }

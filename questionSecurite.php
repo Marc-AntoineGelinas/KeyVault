@@ -28,19 +28,19 @@ $question = $encryption->encrypterInfos($resultat['questionSecurite'], "d");
     <link rel="stylesheet" type="text/css" href="CSS/grid.css">
 </head>
 <body class="main-Grid">
-<div class="headerL">
-    <a style="font-family: impact; font-size:larger;">Keyvault</a>
+<div id="headerL">
+    <a>Keyvault</a>
 </div>
 
-<div class="headerC">
-
-</div>
-
-<div class="headerR">
+<div id="headerC">
 
 </div>
 
-<div class="bodyL">
+<div id="headerR">
+
+</div>
+
+<div id="bodyL">
     <?php
     if (isset($_SESSION['Notification'])) {
         echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
@@ -49,7 +49,7 @@ $question = $encryption->encrypterInfos($resultat['questionSecurite'], "d");
     ?>
 </div>
 
-<div class="bodyC">
+<div id="bodyC">
     <h1>Répondez à votre question de sécurité pour confirmer la réinitialisation de votre mot de passe principal.</h1>
     <br/>
     <h2>Votre question de sécurité : <?php echo $question; ?></h2>
@@ -62,19 +62,20 @@ $question = $encryption->encrypterInfos($resultat['questionSecurite'], "d");
     </Form>
 </div>
 
-<div class="bodyR">
+<div id="bodyR">
 
 </div>
 
-<div class="footerL">
+<div id="footerL">
 
 </div>
 
-<div class="footerC">
-
+<div id="footerC">
+    <p>Fait par Marc-Antoine Gélinas</p>
+    <p>Dans le cadre du cours Projet Web 2018</p>
 </div>
 
-<div class="footerR">
+<div id="footerR">
 
 </div>
 </body>

@@ -20,28 +20,30 @@ unset($_SESSION['idClasseur']);
 </head>
 
 <body class="main-Grid">
-<div class="headerL">
-    <a style="font-family: impact; font-size:larger;">Keyvault</a>
+<div id="headerL">
+    <a>Keyvault</a>
 </div>
 
-<div class="headerC">
+<div id="headerC">
 
 </div>
 
-<div class="headerR">
-    <label style="float:right;"><?php echo $encryption->encrypterInfos($_SESSION['usager'], "d"); ?></label>
+<div id="headerR">
+    <a><?php echo $encryption->encrypterInfos($_SESSION['usager'], "d"); ?></a>
 </div>
 
-<div class="bodyL">
-    <?php
-    if (isset($_SESSION['Notification'])) {
-        echo '<h1 style="columns: ;color:red">' . $_SESSION['Notification'] . '</h1>';
-        unset($_SESSION['Notification']);
-    }
-    ?>
+<?php
+if (isset($_SESSION['Notification'])) {
+    echo "<div id='bodyL' class='section'>";
+    echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
+    unset($_SESSION['Notification']);
+}
+else
+    echo "<div id='bodyL'>";
+?>
 </div>
 
-<div class="bodyC">
+<div id="bodyC" class="centerDefault section classeur">
     <div>
 
         <?php
@@ -55,19 +57,20 @@ unset($_SESSION['idClasseur']);
     </form>
 </div>
 
-<div class="bodyR">
+<div id="bodyR">
 
 </div>
 
-<div class="footerL">
+<div id="footerL">
 
 </div>
 
-<div class="footerC">
-
+<div id="footerC">
+    <a>Fait par Marc-Antoine Gélinas</a>
+    <a>Dans le cadre du cours Projet Web 2018</a>
 </div>
 
-<div class="footerR">
+<div id="footerR">
 
 </div>
 </body>

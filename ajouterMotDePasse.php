@@ -6,31 +6,35 @@ include_once 'Include/validerAccesPage.include.php';
 <head>
     <title>Key Vault - Ajout Mot de passe</title>
     <link rel="stylesheet" type="text/css" href="CSS/main.css">
+    <link rel="stylesheet" type="text/css" href="CSS/grid.css">
 <script type="text/javascript" src="Javascript/generateurMDP.js"></script>
 </head>
 <body class="main-Grid">
-<div class="headerL">
-    <a style="font-family: impact; font-size:larger;">Keyvault</a>
+<div id="headerL">
+    <a>Keyvault</a>
 </div>
 
-<div class="headerC">
-
-</div>
-
-<div class="headerR">
+<div id="headerC">
 
 </div>
 
-<div class="bodyL">
-    <?php
-    if (isset($_SESSION['Notification'])) {
-        echo '<h1 style="columns: ;color:red">' . $_SESSION['Notification'] . '</h1>';
-        unset($_SESSION['Notification']);
-    }
-    ?>
+<div id="headerR">
+
 </div>
 
-<div class="bodyC">
+<?php
+if (isset($_SESSION['Notification'])) {
+    echo "<div id='bodyL' class='section'>";
+    echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
+    unset($_SESSION['Notification']);
+}
+else
+    echo "<div id='bodyL'>";
+?>
+</div>
+
+<div id="bodyC" class="centerDefault section">
+    <a class="titre">Veuillez définir et générer le mot de passe</a>
     <form name="formAjoutMdp" method="post" action="Redirect/validerAjoutMotDePasse.redirect.php">
         <label for="nom">Nom du mot de passe:
             <input type="text" name="nom" id="nom" max="255" placeholder="ex: Facebook">
@@ -69,19 +73,20 @@ include_once 'Include/validerAccesPage.include.php';
     </form>
 </div>
 
-<div class="bodyR">
+<div id="bodyR">
     <label type="hidden" id="eGenerateur" style="color:red"></label>
 </div>
 
-<div class="footerL">
+<div id="footerL">
 
 </div>
 
-<div class="footerC">
-
+<div id="footerC">
+    <a>Fait par Marc-Antoine Gélinas</a>
+    <a>Dans le cadre du cours Projet Web 2018</a>
 </div>
 
-<div class="footerR">
+<div id="footerR">
 
 </div>
 </body>

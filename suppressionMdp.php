@@ -29,19 +29,19 @@ $nom = $encryption->encrypterInfos($resultatMdp[0]['nom'], "d");
         <link rel="stylesheet" type="text/css" href="CSS/grid.css">
     </head>
     <body class="main-Grid">
-    <div class="headerL">
-        <a style="font-family: impact; font-size:larger;">Keyvault</a>
+    <div id="headerL">
+        <a>Keyvault</a>
     </div>
 
-    <div class="headerC">
-
-    </div>
-
-    <div class="headerR">
+    <div id="headerC">
 
     </div>
 
-    <div class="bodyL">
+    <div id="headerR">
+
+    </div>
+
+    <div id="bodyL">
         <?php
         if (isset($_SESSION['Notification'])) {
             echo '<h1 style="columns: ;color:red">' . $_SESSION['Notification'] . '</h1>';
@@ -50,7 +50,7 @@ $nom = $encryption->encrypterInfos($resultatMdp[0]['nom'], "d");
         ?>
     </div>
 
-    <div class="bodyC">
+    <div id="bodyC">
         <h1>Êtes-vous certain de vouloir supprimer : <?php echo $nom ?></h1>
         <h2 style="color:red;">Attention! Une fois le mot de passe effacé, il ne pourra pas être récupperé!</h2>
         <form name="formModifMdp" method="post" action="Redirect/supprMotDePasse.redirect.php">
@@ -74,19 +74,20 @@ $nom = $encryption->encrypterInfos($resultatMdp[0]['nom'], "d");
         </form>
     </div>
 
-    <div class="bodyR">
+    <div id="bodyR">
 
     </div>
 
-    <div class="footerL">
+    <div id="footerL">
 
     </div>
 
-    <div class="footerC">
-
+    <div id="footerC">
+        <p>Fait par Marc-Antoine Gélinas</p>
+        <p>Dans le cadre du cours Projet Web 2018</p>
     </div>
 
-    <div class="footerR">
+    <div id="footerR">
 
     </div>
     </body>

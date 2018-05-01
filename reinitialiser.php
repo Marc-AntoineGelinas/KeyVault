@@ -29,19 +29,19 @@ $idUser = $idUser['id'];
     <link rel="stylesheet" type="text/css" href="CSS/grid.css">
 </head>
 <body class="main-Grid">
-<div class="headerL">
-    <a style="font-family: impact; font-size:larger;">Keyvault</a>
+<div id="headerL">
+    <a>Keyvault</a>
 </div>
 
-<div class="headerC">
-
-</div>
-
-<div class="headerR">
+<div id="headerC">
 
 </div>
 
-<div class="bodyL">
+<div id="headerR">
+
+</div>
+
+<div id="bodyL">
     <?php
     if (isset($_SESSION['Notification'])) {
         echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
@@ -50,7 +50,7 @@ $idUser = $idUser['id'];
     ?>
 </div>
 
-<div class="bodyC">
+<div id="bodyC">
     <h1>Entrer votre nouveau mot de passe. Il doit être différent de votre ancien mot de passe.</h1>
     <Form name="formReinitialisation" method="post" action="Redirect/validerReinitialisation.redirect.php">
         <input type="hidden" id="id" name="id" value="<?php echo $idUser; ?>">
@@ -66,7 +66,7 @@ $idUser = $idUser['id'];
     </Form>
 </div>
 
-<div class="bodyR">
+<div id="bodyR">
     <label id="vMinMax">Votre mot de passe doit contenir entre 10 et 32 caractères</label>
     <label id="vLowercase">Votre mot de passe doit contenir un caractère lowercase</label>
     <label id="vUppercase">Votre mot de passe doit contenir un caractères uppercase</label>
@@ -75,15 +75,16 @@ $idUser = $idUser['id'];
     <label id="vConfirmer">Votre confirmation concorde avec le mot de passe</label>
 </div>
 
-<div class="footerL">
+<div id="footerL">
 
 </div>
 
-<div class="footerC">
-
+<div id="footerC">
+    <p>Fait par Marc-Antoine Gélinas</p>
+    <p>Dans le cadre du cours Projet Web 2018</p>
 </div>
 
-<div class="footerR">
+<div id="footerR">
 
 </div>
 </body>
