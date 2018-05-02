@@ -14,7 +14,7 @@ include_once 'Include/genererSession.include.php';
 
 <body class="main-Grid">
     <div id="headerL">
-        <a>Keyvault</a>
+        <a href="Redirect/logoClick.redirect.php" class="logo">Keyvault</a>
     </div>
 
     <div id="headerC">
@@ -25,17 +25,19 @@ include_once 'Include/genererSession.include.php';
 
     </div>
 
-    <div id="bodyL">
-        <?php
-        if (isset($_SESSION['Notification'])) {
-            echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
-            unset($_SESSION['Notification']);
-        }
-        ?>
+    <?php
+    if (isset($_SESSION['Notification'])) {
+        echo "<div id='bodyL' class='section'>";
+        echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
+        unset($_SESSION['Notification']);
+    }
+    else
+        echo "<div id='bodyL'>";
+    ?>
     </div>
 
-    <div id="bodyC">
-        <h1>Entrez votre l'adresse e-mail du compte pour lequel vous souhaitez réinitialiser le mot de passe.</h1>
+    <div id="bodyC" class="centerDefault section">
+        <a class="titre">Entrez votre l'adresse e-mail pour lequel vous souhaitez réinitialiser le mot de passe.</a>
         <Form name="formOublie" method="post" action="Redirect/validerOublie.redirect.php">
             <label for="email">Adresse e-mail :
                 <input type="text" name="email" id="email">
@@ -53,8 +55,8 @@ include_once 'Include/genererSession.include.php';
     </div>
 
     <div id="footerC">
-        <p>Fait par Marc-Antoine Gélinas</p>
-        <p>Dans le cadre du cours Projet Web 2018</p>
+        <a>Fait par Marc-Antoine Gélinas</a>
+        <a>Dans le cadre du cours Projet Web 2018</a>
     </div>
 
     <div id="footerR">

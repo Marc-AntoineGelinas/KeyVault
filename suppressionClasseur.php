@@ -28,7 +28,7 @@ $requete = new Gestionbd();
 
     <body class="main-Grid">
         <div id="headerL">
-            <a>Keyvault</a>
+            <a href="Redirect/logoClick.redirect.php" class="logo">Keyvault</a>
         </div>
 
         <div id="headerC">
@@ -61,11 +61,11 @@ $requete = new Gestionbd();
 
                 <?php
                 if ($resultatClasseur['master'] == null) {
-                    echo "<label for='mdpClasseur'>Entrer votre mot de passe principal :";
+                    echo "<label for='mdpClasseur'>Entrer votre mot de passe principal : ";
                     echo "<input type='hidden' id='master' name='master' value='false'>";
                 }
                 else {
-                    echo "<label for='mdpClasseur'>Entrer le mot de passe du classeur :";
+                    echo "<label for='mdpClasseur'>Entrer le mot de passe du classeur : ";
                     echo "<input type='hidden' id='master' name='master' value='true'>";
                 }
 

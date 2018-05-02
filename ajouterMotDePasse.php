@@ -11,7 +11,7 @@ include_once 'Include/validerAccesPage.include.php';
 </head>
 <body class="main-Grid">
 <div id="headerL">
-    <a>Keyvault</a>
+    <a href="Redirect/logoClick.redirect.php" class="logo">Keyvault</a>
 </div>
 
 <div id="headerC">

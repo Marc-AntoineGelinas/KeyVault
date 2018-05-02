@@ -23,14 +23,14 @@ $nom = $encryption->encrypterInfos($resultatMdp[0]['nom'], "d");
 ?>
 <html>
     <head>
-        <title>Key Vault - Modifier mot de passe</title>
+        <title>Key Vault - Supprimer mot de passe</title>
         <script type="text/javascript" src="Javascript/generateurMDP.js"></script>
         <link rel="stylesheet" type="text/css" href="CSS/main.css">
         <link rel="stylesheet" type="text/css" href="CSS/grid.css">
     </head>
     <body class="main-Grid">
     <div id="headerL">
-        <a>Keyvault</a>
+        <a href="Redirect/logoClick.redirect.php" class="logo">Keyvault</a>
     </div>
 
     <div id="headerC">
@@ -41,29 +41,31 @@ $nom = $encryption->encrypterInfos($resultatMdp[0]['nom'], "d");
 
     </div>
 
-    <div id="bodyL">
-        <?php
-        if (isset($_SESSION['Notification'])) {
-            echo '<h1 style="columns: ;color:red">' . $_SESSION['Notification'] . '</h1>';
-            unset($_SESSION['Notification']);
-        }
-        ?>
+    <?php
+    if (isset($_SESSION['Notification'])) {
+        echo "<div id='bodyL' class='section'>";
+        echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
+        unset($_SESSION['Notification']);
+    }
+    else
+        echo "<div id='bodyL'>";
+    ?>
     </div>
 
-    <div id="bodyC">
-        <h1>Êtes-vous certain de vouloir supprimer : <?php echo $nom ?></h1>
-        <h2 style="color:red;">Attention! Une fois le mot de passe effacé, il ne pourra pas être récupperé!</h2>
+    <div id="bodyC" class="centerDefault section">
+        <a class="titre">Êtes-vous certain de vouloir supprimer : <?php echo $nom ?></a>
+        <a class="titre" style="color:red;">Attention! Une fois le mot de passe effacé, il ne pourra pas être récupperé!</a>
         <form name="formModifMdp" method="post" action="Redirect/supprMotDePasse.redirect.php">
 
             <input type="hidden" id="idMdp" name="idMdp" value="<?php echo $resultatMdp[0]['id'];?>">
 
             <?php
             if ($resultatClasseur[0]['master'] == null) {
-                echo "<label for='mdpClasseur'>Entrer votre mot de passe principal :";
+                echo "<label for='mdpClasseur'>Entrer votre mot de passe principal : ";
                 echo "<input type='hidden' id='master' name='master' value='false'>";
             }
             else {
-                echo "<label for='mdpClasseur'>Entrer le mot de passe du classeur :";
+                echo "<label for='mdpClasseur'>Entrer le mot de passe du classeur : ";
                 echo "<input type='hidden' id='master' name='master' value='true'>";
             }
 
@@ -83,8 +85,8 @@ $nom = $encryption->encrypterInfos($resultatMdp[0]['nom'], "d");
     </div>
 
     <div id="footerC">
-        <p>Fait par Marc-Antoine Gélinas</p>
-        <p>Dans le cadre du cours Projet Web 2018</p>
+        <a>Fait par Marc-Antoine Gélinas</a>
+        <a>Dans le cadre du cours Projet Web 2018</a>
     </div>
 
     <div id="footerR">

@@ -26,7 +26,7 @@ $password = $encryption->encrypterInfos($resultat[0]['password'], "d");
 
     <body class="main-Grid">
         <div id="headerL">
-            <a>Keyvault</a>
+            <a href="Redirect/logoClick.redirect.php" class="logo">Keyvault</a>
         </div>
 
         <div id="headerC">
@@ -37,16 +37,19 @@ $password = $encryption->encrypterInfos($resultat[0]['password'], "d");
 
         </div>
 
-        <div id="bodyL">
-            <?php
-            if (isset($_SESSION['Notification'])) {
-                echo '<h1 style="columns: ;color:red">' . $_SESSION['Notification'] . '</h1>';
-                unset($_SESSION['Notification']);
-            }
-            ?>
+        <?php
+        if (isset($_SESSION['Notification'])) {
+            echo "<div id='bodyL' class='section'>";
+            echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
+            unset($_SESSION['Notification']);
+        }
+        else
+            echo "<div id='bodyL'>";
+        ?>
         </div>
 
-        <div id="bodyC">
+        <div id="bodyC" class="centerDefault section">
+            <a class="titre">Modifier mot de passe</a>
             <form name="formModifMdp" method="post" action="Redirect/validerModifMotDePasse.redirect.php">
                 <label for="nom">Nom du mot de passe:
                     <input type="text" name="nom" id="nom" max="255" placeholder="ex: Facebook" value="<?php echo $nom; ?>">
@@ -95,8 +98,8 @@ $password = $encryption->encrypterInfos($resultat[0]['password'], "d");
         </div>
 
         <div id="footerC">
-            <p>Fait par Marc-Antoine Gélinas</p>
-            <p>Dans le cadre du cours Projet Web 2018</p>
+            <a>Fait par Marc-Antoine Gélinas</a>
+            <a>Dans le cadre du cours Projet Web 2018</a>
         </div>
 
         <div id="footerR">

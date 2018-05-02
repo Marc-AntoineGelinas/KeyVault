@@ -14,7 +14,6 @@ a {
 }
 a:hover {
     color: #ffffff;
-    cursor: default;
 }
 
 button {
@@ -94,10 +93,14 @@ button {
     text-align:center;
     font-size:25px;
     font-weight:bold;
-    white-space: nowrap;
-    overflow:hidden;
     padding-left: 5%;
     padding-right: 5%;
+    cursor:default;
+}
+
+.logo {
+    text-decoration: none;
+    cursor:pointer;
 }
 
 
