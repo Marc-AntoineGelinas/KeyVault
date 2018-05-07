@@ -14,6 +14,7 @@ a {
 }
 a:hover {
     color: #ffffff;
+    cursor: default;
 }
 
 button {
@@ -33,14 +34,18 @@ button {
 }
 .centerDefault label {
     display: block;
-    clear: left;
-    width: 100%;
-    text-align: right;
-    position:relative;
-    left:-20%;
+    text-align:left;
+    margin-left:30%;
+    margin-bottom: 1%;
+    margin-top:1%;
     padding-top: 0.5%;
     padding-bottom:0.5%;
 }
+
+.centerDefault input {
+    display:block;
+}
+
 
 .Classeur{
 
@@ -56,6 +61,11 @@ button {
     border-style:solid;
     border-radius: 15px;
     border-color: black;
+}
+
+.classeur div div input {
+    position:relative;
+    left: 20%;
 }
 
 .Classeur div div form {
@@ -96,6 +106,14 @@ button {
     padding-left: 5%;
     padding-right: 5%;
     cursor:default;
+    margin:1%;
+    padding:1%;
+    display: block;
+    color: #878383;
+    transition: color 0.5s ease-out;
+}
+.titre:hover {
+    color: black;
 }
 
 .logo {

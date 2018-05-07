@@ -1,5 +1,6 @@
 <?php
 include_once 'Include/genererSession.include.php';
+include_once 'Include/validerConnexion.include.php';
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +36,7 @@ include_once 'Include/genererSession.include.php';
             </div>
 
         <div id="bodyC" class="section centerDefault">
-            <a class="titre">Connexion</a>
+            <p class="titre">Connexion</p>
             <Form name="formLogin" method="post" action="Redirect/validerSession.redirect.php">
                 <label for="email">Adresse e-mail :
                     <input type="text" name="email" id="email">

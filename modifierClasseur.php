@@ -64,6 +64,7 @@ $nom = $encryption->encrypterInfos($resultat['nom'], "d");
 </div>
 
 <div id="bodyR">
+    <p class="titre">Validations</p>
     <label id="vNom">Le nom de classeur est valide</label>
     <label id="vMinMax">Votre mot de passe doit contenir entre 10 et 32 caractères</label>
     <label id="vLowercase">Votre mot de passe doit contenir un caractère lowercase</label>

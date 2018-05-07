@@ -51,21 +51,20 @@ $requete = new Gestionbd();
         </div>
 
         <div id="bodyC" class="centerDefault section">
-            <h1>Êtes-vous certain de vouloir supprimer : <?php echo $nom ?></h1>
-            <h2 style="color:red;">Attention! Une fois le classeur effacé, il ne pourra pas être récupperé!</h2>
-            <br/>
-            <h3 style="color:red;">Une fois le classeur effacé, tous les mots de passes qu'il contenait seront aussi effacés!</h3>
+            <p class="titre">Êtes-vous certain de vouloir supprimer : <?php echo $nom ?></p>
+            <p class="titre" style="color:red;">Attention! Une fois le classeur effacé, il ne pourra pas être récupperé!</p>
+            <p class="titre" style="color:red;">Une fois le classeur effacé, tous les mots de passes qu'il contenait seront aussi effacés!</p>
             <form name="formSupprClasseur" method="post" action="Redirect/supprClasseur.redirect.php">
 
                 <input type="hidden" id="idClasseur" name="idClasseur" value="<?php echo $resultatClasseur['id'];?>">
 
                 <?php
                 if ($resultatClasseur['master'] == null) {
-                    echo "<label for='mdpClasseur'>Entrer votre mot de passe principal : ";
+                    echo "<label for='mdpClasseur'>Mot de passe principal";
                     echo "<input type='hidden' id='master' name='master' value='false'>";
                 }
                 else {
-                    echo "<label for='mdpClasseur'>Entrer le mot de passe du classeur : ";
+                    echo "<label for='mdpClasseur'>Mot de passe du classeur";
                     echo "<input type='hidden' id='master' name='master' value='true'>";
                 }
 

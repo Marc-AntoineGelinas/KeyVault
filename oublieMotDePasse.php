@@ -1,5 +1,6 @@
 <?php
 include_once 'Include/genererSession.include.php';
+include_once 'Include/validerConnexion.include.php';
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +38,7 @@ include_once 'Include/genererSession.include.php';
     </div>
 
     <div id="bodyC" class="centerDefault section">
-        <a class="titre">Entrez votre l'adresse e-mail pour lequel vous souhaitez réinitialiser le mot de passe.</a>
+        <p class="titre">Entrez votre l'adresse e-mail pour lequel vous souhaitez réinitialiser le mot de passe.</p>
         <Form name="formOublie" method="post" action="Redirect/validerOublie.redirect.php">
             <label for="email">Adresse e-mail :
                 <input type="text" name="email" id="email">

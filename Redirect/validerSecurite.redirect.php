@@ -33,5 +33,5 @@ if ($encryption->encrypterInfos($resultat['reponseSecurite'], "d") == $reponse){
 else{
         $message = "La réponse à la question de sécurité est invalide.";
         $_SESSION['Notification'] = $message;
-        header("Location : ../index.php");
+        header("Location: ../index.php");
 }

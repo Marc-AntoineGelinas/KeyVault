@@ -40,7 +40,7 @@ $encryption = new encryption();
         </div>
 
         <div id="bodyC" class="section ListeClasseur centerDefault">
-            <a class="titre">Classeur principal</a>
+            <p class="titre">Classeur principal</p>
                 <?php
                 include_once 'Include/afficherClasseurs.include.php';
                 ?>

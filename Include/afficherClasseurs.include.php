@@ -12,7 +12,7 @@ $resultat = $requete->fetchall(PDO::FETCH_ASSOC);
 
 foreach($resultat as $classeur){
     echo "<div>";
-        echo "<a class='titre'>" . $encryption->encrypterInfos($classeur['nom'],"d") . "</a>";
+        echo "<p class='titre'>" . $encryption->encrypterInfos($classeur['nom'],"d") . "</p>";
         echo '<form name="formClasseur" method="post" action="Redirect/validerClasseur.redirect.php">';
             echo "<input type='hidden' id='classeur' name='classeur' value=' " . $classeur['id'] . "''></input>";
             echo "<button onclick='formClasseur.submit()'>Accèder</button>";

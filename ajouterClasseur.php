@@ -44,16 +44,16 @@ else
 </div>
 
 <div id="bodyC" class="section centerDefault">
-    <a class="titre">Informations du nouveau classeur</a>
+    <p class="titre">Informations du nouveau classeur</p>
     <Form name="formNouveauClasseur" method="post" action="Redirect/validerNouveauClasseur.redirect.php">
-        <label for="nom">Nom du classeur :
+        <label for="nom">Nom du classeur
             <input type="text" name="Nom" id="nom" onkeyup="validationNomClasseur(this.value)">
         </label>
         <label type="hidden" id="hNom"></label>
-        <label for="pass">Mot de passe (optionnel) :
+        <label for="pass">Mot de passe (optionnel)
             <input type="password" name="Pass" id="pass" onkeyup="confirmationCreationClasseur()">
         </label>
-        <label for="pass2">Confirmer le mot de passe :
+        <label for="pass2">Confirmer le mot de passe
             <input type="password" name="Pass2" id="pass2" onkeyup="confirmationCreationClasseur()" disabled>
         </label>
         <button id="btnAjout" onclick="formNouveauClasseur.submit()" disabled>Ajouter</button>
@@ -61,7 +61,7 @@ else
 </div>
 
 <div id="bodyR" class="section">
-    <a class="titre">Validations</a>
+    <p class="titre">Validations</p>
     <label id="vNom">Le nom de classeur est valide</label>
     <label id="vMinMax">Votre mot de passe doit contenir entre 10 et 32 caractères</label>
     <label id="vLowercase">Votre mot de passe doit contenir un caractère lowercase</label>

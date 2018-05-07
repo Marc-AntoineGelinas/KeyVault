@@ -14,7 +14,7 @@ echo "<a class='titre'>" . $encryption->encrypterInfos($resultat[0]['nomVault'],
 
 foreach($resultat as $motsDePasse){
     echo "<div>";
-        echo "<a class='titre'>" . $encryption->encrypterInfos($motsDePasse['nomMdp'], 'd') . "</a>";
+        echo "<p class='titre'>" . $encryption->encrypterInfos($motsDePasse['nomMdp'], 'd') . "</p>";
             echo "<input type='text' name⁼'mdp' id='mdp' size='32' value='" . $encryption->encrypterInfos($motsDePasse['passwordMdp'], 'd') . "'></input>";
 
             echo "<form name='formSupprMdp' method='post' action='suppressionMdp.php'>";
