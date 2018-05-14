@@ -10,7 +10,7 @@ $verification = $verification->requeteSQLPDO("SELECT users_vault.id, users_vault
 FROM users_vault
 INNER JOIN users_informations
 ON users_vault.users_informations_id = users_informations.id
-WHERE users_informations.email = :param1 AND users_vault.id = :param2", array($_SESSION['usager'], $idClasseur));
+WHERE users_informations.email = :param1 AND users_vault.id = :param2", array($_SESSION['usager'], $idClasseur), __FILE__);
 
 if ($verification->rowCount() != 1){
     $message = "Ce classeur ne vous appartient pas.";
@@ -36,7 +36,7 @@ else
         </head>
         <body class="main-Grid">
         <div id="headerL">
-            <a href="Redirect/logoClick.redirect.php" class="logo">Keyvault</a>
+            <a href="../Redirect/logoClick.redirect.php" class="logo"><img src="../Ressources/Logo.png"></a>
         </div>
 
         <div id="headerC">
@@ -58,9 +58,12 @@ else
         </div>
 
         <div id="bodyC" class="section centerDefault">
-            <a class="titre">Entrer le mot de passe du classeur</a>
+            <p class="titre">Entrer le mot de passe du classeur</p>
             <form  name="formLogin" method="post" action="validerMDPClasseur.redirect.php">
-                <input type="password" name="pass" id="pass" placeholder="Mot de passe">
+                <label>Mot de passe :
+                <input type="password" name="pass" id="pass">
+                </label>
+                <button onclick="formLogin.submit();">Accèder</button>
             </form>
         </div>
 

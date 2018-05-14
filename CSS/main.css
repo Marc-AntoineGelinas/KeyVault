@@ -9,22 +9,29 @@ a {
     margin:1%;
     padding:1%;
     display: block;
-    color: #878383;
+    color: #5A5A66;
     transition: color 0.5s ease-out;
 }
 a:hover {
-    color: #ffffff;
+    color: #2A2B2E;
+    cursor: default;
 }
 
 button {
-    border-color:black;
-    border-radius :15px;
-    background-color: white;
-    color:black;
+    border-color: #5A5A66;
+    border-radius: 15px;
+    background-color: #76B4BE;
+    color: #5A5A66;
     font-weight: bold;
     cursor: pointer;
     font-size: 15px;
     margin: 2%;
+    transition: color 1s ease;
+    transition: background-color 1s ease;
+}
+button:hover {
+    color: #2A2B2E;
+    background-color: #BF4342;
 }
 
 .centerDefault {
@@ -33,17 +40,16 @@ button {
 }
 .centerDefault label {
     display: block;
-    clear: left;
-    width: 100%;
-    text-align: right;
-    position:relative;
-    left:-20%;
+    text-align:left;
+    min-width:25%;
+    width:25%;
+    margin: 0 auto;
     padding-top: 0.5%;
     padding-bottom:0.5%;
 }
 
-.Classeur{
-
+.centerDefault input {
+    display:block;
 }
 
 .Classeur div {
@@ -55,7 +61,12 @@ button {
 .Classeur div div {
     border-style:solid;
     border-radius: 15px;
-    border-color: black;
+    border-color: #8C1C13;
+}
+
+.classeur div div input {
+    position:relative;
+    left: 20%;
 }
 
 .Classeur div div form {
@@ -67,7 +78,7 @@ button {
     margin-bottom: 10px;
     border-style:solid;
     border-radius: 15px;
-    border-color: black;
+    border-color: #8C1C13;
 }
 
 
@@ -79,13 +90,12 @@ button {
     padding:  1%;
     border-style: solid;
     background-color: white;
-    border-color: black;
+    border-color: #8C1C13;
     border-radius: 15px;
-    border-color: #878383;
 }
 
 .section a:hover{
-    color: black;
+    color: #2A2B2E;
     cursor: pointer;
 }
 
@@ -96,13 +106,21 @@ button {
     padding-left: 5%;
     padding-right: 5%;
     cursor:default;
+    margin:1%;
+    padding:1%;
+    display: block;
+    color: #BF4342;
+    transition: color 0.5s ease-out;
+}
+.titre:hover {
+    color: #8C1C13;
 }
 
-.logo {
-    text-decoration: none;
-    cursor:pointer;
+.logo img {
+    width: 248px;
+    height: 248px;
+    cursor: pointer;
 }
-
 
 
 

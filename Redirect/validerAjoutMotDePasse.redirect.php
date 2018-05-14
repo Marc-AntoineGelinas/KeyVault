@@ -14,16 +14,19 @@ $idClasseur = $_POST['idClasseur'];
 
 if (strlen($mdp) == 0 || strlen($nom) == 0){
     $message = "Le mot de passe et le nom ne peuvent pas être vide.";
-    $_SESSION['notification'] = $message;
-    header("Location: ../ajouterMotDePasse.php");
+    $_SESSION['Notification'] = $message;
+   header("Location: ../ajouterMotDePasse.php");
+   die();
 } else if (strlen($mdp) < 10 || strlen($mdp) > 32){
     $message = "Le mot de passe doit contenir entre 10 et 32 caractères.";
-    $_SESSION['notification'] = $message;
+    $_SESSION['Notification'] = $message;
     header("Location: ../ajouterMotDePasse.php");
+    die();
 } else if (strlen($nom) < 1 || strlen($nom) > 255){
     $message = "Le nom doit contenir entre 1 et 255 caractères.";
-    $_SESSION['notification'] = $message;
+    $_SESSION['Notification'] = $message;
     header("Location: ../ajouterMotDePasse.php");
+    die();
 }
 else
 {
@@ -35,14 +38,6 @@ $id = $id->requeteSQLPDO("SELECT id FROM users_informations WHERE email = :param
 
 if ($id->rowCount() ==1){
     $resultatId = $id->fetch(PDO::FETCH_ASSOC);
-    echo "Nom : " . $nom;
-    echo "<br/>";
-    echo "Mdp : " . $mdp;
-    echo "<br/>";
-    echo "idClasseur : " . $idClasseur;
-    echo "<br/>";
-    echo "<br/>";
-    echo "ResultatId['id'] : " . $resultatId['id'];
     $ajout->requeteSQLPDO("INSERT INTO `users_passwords`(`nom`, `password`, `users_vault_id`, `users_vault_users_informations_id`)
                                 VALUES (:param1, :param2, :param3, :param4)",
         array($nom, $mdp, $idClasseur, $resultatId['id']), __FILE__);

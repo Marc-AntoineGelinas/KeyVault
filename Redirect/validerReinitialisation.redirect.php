@@ -30,5 +30,5 @@ else{
 
     $message = "Votre mot  de passe a été réinitialiser";
     $_SESSION['Notification'] = $message;
-    header("Location: ../index.php");
+    header("Location: ../connexion.php");
 }

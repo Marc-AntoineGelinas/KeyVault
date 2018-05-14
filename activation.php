@@ -13,7 +13,7 @@ include_once 'Include/genererSession.include.php';
 </head>
 <body class="main-Grid">
     <div id="headerL">
-        <a href="Redirect/logoClick.redirect.php" class="logo">Keyvault</a>
+        <a href="Redirect/logoClick.redirect.php" class="logo"><img src="Ressources/Logo.png"></a>
     </div>
 
     <div id="headerC">
@@ -38,7 +38,7 @@ include_once 'Include/genererSession.include.php';
 
     <div id="bodyC" class="section centerDefault">
         <Form name="formActivation" method="post" action="Redirect/validerActivation.redirect.php">
-            <a class="titre">Entrer vos informations d'activation</a>
+            <p class="titre">Entrer vos informations d'activation</p>
             <label for="email">Adresse e-mail :
                 <input type="text" name="email" id="email">
             </label>
@@ -48,7 +48,7 @@ include_once 'Include/genererSession.include.php';
             <label for="code">Code d'activation :
                 <input type="text" name="code" id="code">
             </label>
-            <a class="titre">Veuillez saisir une question de sécurité pour validé votre identité en cas de perte de mot de passe.</a>
+            <p class="titre">Veuillez saisir une question de sécurité pour validé votre identité en cas de perte de mot de passe.</p>
             <label for="question">Question de sécurité :
                 <input type="text" name="question" id="question">
             </label>

@@ -28,10 +28,10 @@ if ($encryption->encrypterInfos($resultat['reponseSecurite'], "d") == $reponse){
 
         $message = "Un e-mail vous a été envoyé pour la réinitialisation du mot de passe.";
         $_SESSION['Notification'] = $message;
-        header("Location: ../index.php");
+        header("Location: ../connexion.php");
 }
 else{
         $message = "La réponse à la question de sécurité est invalide.";
         $_SESSION['Notification'] = $message;
-        header("Location : ../index.php");
+        header("Location: ../connexion.php");
 }

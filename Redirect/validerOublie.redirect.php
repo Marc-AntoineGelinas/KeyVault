@@ -22,13 +22,13 @@ if ($verification->rowCount() == 1){
     else{
         $message = "L'adresse de réinitialisation vous a déjà été envoyée à votre e-mail";
         $_SESSION['Notification'] = $message;
-        header("Location: ../index.php");
+        header("Location: ../connexion.php");
     }
 }
 else
 {
     $message = "Cette adresse email n'est pas dans la base de données.";
     $_SESSION['Notification'] = $message;
-    header("Location: ../index.php");
+    header("Location: ../connexion.php");
 }
 

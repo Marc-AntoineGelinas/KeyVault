@@ -5,7 +5,9 @@ include_once "requeteSQL.classe.php";
 //Gère des opérations sur la base de données
 class Gestionbd  {
 
-    //Retourne la liste des classeurs
+    /*
+     * Retourne la liste des classeurs d'un usager en lien avec son email
+     */
     public function getListeClasseur($email){
         $requete = new requete();
 
@@ -19,6 +21,9 @@ class Gestionbd  {
         return $requete;
     }
 
+    /*
+     * Retourne tous les mots de passe d'un usager en lien avec un classeur avec le email comme validation
+     */
     public function getListeMotsDePasse($idClasseur, $email){
         $requete = new requete();
 
@@ -38,6 +43,9 @@ class Gestionbd  {
         return $requete;
     }
 
+    /*
+     * Retourne les informations d'un mot de passe en lien avec son ID
+     */
     public function getInfosMotDePasse($idMdp){
         $requete = new requete();
 
@@ -50,6 +58,23 @@ class Gestionbd  {
         return $requete;
     }
 
+    /*
+    * Mets à jour les informations d'un mot de passe en lien avec son ID
+    */
+    public function setInfosMotDePasse($idMdp, $nom, $password, $idClasseur){
+        $requete = new requete();
+
+        $requete->requeteSQLPDO(
+            "UPDATE users_passwords 
+                  SET nom=:param2,password=:param3 
+                  WHERE users_vault_id= :param4
+                  AND id=:param1",
+            array($idMdp, $nom, $password, $idClasseur), __FILE__);
+    }
+
+    /*
+     * Retourne les infos d'usager en lien avec son ID
+     */
     public function getInfosUser($idUser){
         $requete = new requete();
 
@@ -62,16 +87,9 @@ class Gestionbd  {
         return $requete;
     }
 
-    public function setInfosUser($id, $password, $question, $reponse, $recovery){
-        $requete = new requete();
-
-        $requete->requeteSQLPDO(
-            "UPDATE users_informations 
-                  SET password=:param2,questionSecurite=:param3,reponseSecurite=:param4,recovery=:param5 
-                  WHERE id=:param1",
-            array($id, $password, $question, $reponse, $recovery), __FILE__);
-    }
-
+    /*
+     * Retourne les infos d'usager en lien avec le numéro de recouvrement donné
+     */
     public function getInfosUserV2($recovery){
         $requete = new requete();
 
@@ -84,6 +102,22 @@ class Gestionbd  {
         return $requete;
     }
 
+    /*
+     * Mets à jour les informations d'un usager en lien avec son ID
+     */
+    public function setInfosUser($id, $password, $question, $reponse, $recovery){
+        $requete = new requete();
+
+        $requete->requeteSQLPDO(
+            "UPDATE users_informations 
+                  SET password=:param2,questionSecurite=:param3,reponseSecurite=:param4,recovery=:param5 
+                  WHERE id=:param1",
+            array($id, $password, $question, $reponse, $recovery), __FILE__);
+    }
+
+    /*
+     * Retourne les infos d'un classeur en lien avec le ID du classseur
+     */
     public function getInfosClasseur($idClasseur){
         $requete = new requete();
 
@@ -96,17 +130,21 @@ class Gestionbd  {
         return $requete;
     }
 
-    public function setInfosMotDePasse($idMdp, $nom, $password, $idClasseur){
+    /*
+     * Mets à jour les infos d'un classeur en lien avec son ID
+     */
+    public function setInfosClasseur($id, $nom, $master){
         $requete = new requete();
 
         $requete->requeteSQLPDO(
-            "UPDATE users_passwords 
-                  SET nom=:param2,password=:param3 
-                  WHERE users_vault_id= :param4
-                  AND id=:param1",
-            array($idMdp, $nom, $password, $idClasseur), __FILE__);
+            "UPDATE users_vault 
+                  SET nom=:param2, master=:param3 
+                  WHERE id=:param1",array($id, $nom, $master), __FILE__);
     }
 
+    /*
+     * Supprime un mot de passe en lien avec son ID
+     */
     public function deleteMotDePasse($idMdp){
         $requete = new requete();
 
@@ -116,6 +154,9 @@ class Gestionbd  {
             array($idMdp), __FILE__);
     }
 
+    /*
+     * Vide un classeur de ses mots de passe en lien avec l'ID du classeur
+     */
     public function clearClasseur($idClasseur){
         $requete = new requete();
 
@@ -125,6 +166,10 @@ class Gestionbd  {
             array($idClasseur), __FILE__);
     }
 
+    /*
+     * Supprime un classeur en lien avec son ID
+     * Le classeur doit être vide au préalable
+     */
     public function deleteClasseur($idClasseur){
         $requete = new requete();
 
@@ -134,13 +179,6 @@ class Gestionbd  {
             array($idClasseur), __FILE__);
     }
 
-    public function setInfosClasseur($id, $nom, $master){
-        $requete = new requete();
 
-        $requete->requeteSQLPDO(
-            "UPDATE users_vault 
-                  SET nom=:param2, master=:param3 
-                  WHERE id=:param1",array($id, $nom, $master), __FILE__);
-    }
 
 }

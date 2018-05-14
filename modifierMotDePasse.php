@@ -26,7 +26,7 @@ $password = $encryption->encrypterInfos($resultat[0]['password'], "d");
 
     <body class="main-Grid">
         <div id="headerL">
-            <a href="Redirect/logoClick.redirect.php" class="logo">Keyvault</a>
+            <a href="Redirect/logoClick.redirect.php" class="logo"><img src="Ressources/Logo.png"></a>
         </div>
 
         <div id="headerC">
@@ -49,7 +49,7 @@ $password = $encryption->encrypterInfos($resultat[0]['password'], "d");
         </div>
 
         <div id="bodyC" class="centerDefault section">
-            <a class="titre">Modifier mot de passe</a>
+            <p class="titre">Modifier mot de passe</p>
             <form name="formModifMdp" method="post" action="Redirect/validerModifMotDePasse.redirect.php">
                 <label for="nom">Nom du mot de passe:
                     <input type="text" name="nom" id="nom" max="255" placeholder="ex: Facebook" value="<?php echo $nom; ?>">

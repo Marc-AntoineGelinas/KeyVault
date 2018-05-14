@@ -10,7 +10,7 @@ $operation = new Requete();
 $encryption = new encryption();
 
 $code = $encryption->encrypterInfos($_POST['code']);
-$email = $encryption->encrypterInfos($_POST['email']);
+$email = $encryption->encrypterInfos(strtolower($_POST['email']));
 $question = $_POST['question'];
 $reponse = $_POST['reponse'];
 
@@ -31,7 +31,7 @@ if ($temporaire->rowCount() ==1){
                 $operation->requeteSQLPDO("DELETE FROM users_temporaires WHERE email = :param1", array($resultat['email']), __FILE__);
                 $message = "Votre compte a été activer.";
                 $_SESSION['Notification'] = $message;
-                header("Location: ../index.php");
+                header("Location: ../connexion.php");
             }
             else{
                 $message = "Vous devez saisir une question et une réponse de sécurité avec un minimum de 5 caractères.";

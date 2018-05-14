@@ -216,6 +216,25 @@ function validerMotDePasseClasseur(mdp) {
 }
 
 /*
+Valide que le nom de classeur est contient au moins un caractère
+*/
+function validerNomClasseur(nom){
+    var vNom = document.getElementById("vNom");
+
+    if (nom.length < 1){
+        vNom.setAttribute("style", "color : red");
+        vNom.innerHTML = "Le nom du classeur doit contenir au moins un caractère";
+        return false;
+    }
+    else
+    {
+        vNom.setAttribute("style", "color : green");
+        vNom.innerHTML = "Le nom du classeur est valide";
+        return true
+    }
+}
+
+/*
 Valide que la confirmation du mot de passe est identique au mot de passe. Sinon, la confirmation n'est pas
 autoriser.
  */
@@ -239,6 +258,9 @@ function validerConfirmationCompte(mdp) {
     }
 }
 
+/*
+Valide que la confirmation du mot de passe d'un classeur
+ */
 function validerConfirmationClasseur(mdp) {
     var vConfirmer = document.getElementById("vConfirmer");
     var vMdp = document.getElementById("pass2");
@@ -280,6 +302,9 @@ function confirmationCreationCompte() {
     }
 }
 
+/*
+Valide la reinitialisation d'un mot de passe principal
+ */
 function confirmationReinitialisation() {
     var mdp = document.getElementById("pass");
     var boutton = document.getElementById("btnAjout");
@@ -296,11 +321,11 @@ Valide que les 3 champs sont valides pour la création du classeur (nom, mot de 
 confirmation)
 */
 function confirmationCreationClasseur() {
-    var hNom = document.getElementById("hNom");
+    var nom = document.getElementById("nom");
     var mdp = document.getElementById("pass");
     var boutton = document.getElementById("btnAjout");
 
-    if (hNom.value == true && validerMotDePasseClasseur(mdp.value) && validerConfirmationClasseur(mdp.value)) {
+    if (validerNomClasseur(nom.value) && validerMotDePasseClasseur(mdp.value) && validerConfirmationClasseur(mdp.value)) {
         boutton.removeAttribute("disabled");
     }
     else {

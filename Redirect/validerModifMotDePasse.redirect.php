@@ -14,16 +14,19 @@ $idClasseur = $_POST['idClasseur'];
 
 if (strlen($mdp) == 0 || strlen($nom) == 0){
     $message = "Le mot de passe et le nom ne peuvent pas être vide.";
-    $_SESSION['notification'] = $message;
+    $_SESSION['Notification'] = $message;
     header("Location: ../listeClasseurs.php");
+    die();
 } else if (strlen($mdp) < 10 || strlen($mdp) > 32){
     $message = "Le mot de passe doit contenir entre 10 et 32 caractères.";
-    $_SESSION['notification'] = $message;
+    $_SESSION['Notification'] = $message;
     header("Location: ../listeClasseurs.php");
+    die();
 } else if (strlen($nom) < 1 || strlen($nom) > 255){
     $message = "Le nom doit contenir entre 1 et 255 caractères.";
-    $_SESSION['notification'] = $message;
+    $_SESSION['Notification'] = $message;
     header("Location: ../listeClasseurs.php");
+    die();
 }
 else
 {

@@ -7,7 +7,7 @@ $usager = new Requete();
 $mdp = new Requete();
 $encryption = new encryption();
 
-$email = $encryption->encrypterInfos($_POST['email']);
+$email = $encryption->encrypterInfos(strtolower($_POST['email']));
 
 //Va chercher dans la base de données si le compte utilisateur et le mot de passe concorde/existe
 $usager = $usager->requeteSQLPDO("SELECT email FROM users_informations WHERE email = :param1", array($email), __FILE__);
@@ -32,7 +32,7 @@ if ($usager->rowcount() == 1)
         $message = "Les informations ne sont pas valide.";
         $_SESSION['Notification'] = $message;
         $ajoutLog = new AjouterLog("logConnexionEchoue.log", "Mot de passe invalide : " . $_POST['email'], __FILE__);
-        header("Location: ../index.php");
+        header("Location: ../connexion.php");
     }
 }
 else
@@ -40,5 +40,5 @@ else
     $message = "Les informations ne sont pas valide.";
     $_SESSION['Notification'] = $message;
     $ajoutLog = new AjouterLog("logConnexionEchoue.log", "L'usager n'existe pas : " . $_POST['email'], __FILE__);
-    header("Location: ../index.php");
+    header("Location: ../connexion.php");
 }

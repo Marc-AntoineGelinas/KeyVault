@@ -20,11 +20,12 @@ $nom = $encryption->encrypterInfos($resultat['nom'], "d");
 <head>
     <title>Key Vault - Modifier Classeur</title>
     <script type="text/javascript" src="Javascript/validationMdp.js"></script>
-    <script type="text/javascript" src="Javascript/validationClasseur.ajax.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/main.css">
+    <link rel="stylesheet" type="text/css" href="CSS/grid.css">
 </head>
 <body class="main-Grid">
 <div id="headerL">
-    <a href="Redirect/logoClick.redirect.php" class="logo">Keyvault</a>
+    <a href="Redirect/logoClick.redirect.php" class="logo"><img src="Ressources/Logo.png"></a>
 </div>
 
 <div id="headerC">
@@ -35,22 +36,24 @@ $nom = $encryption->encrypterInfos($resultat['nom'], "d");
 
 </div>
 
-<div id="bodyL">
-    <?php
-    if (isset($_SESSION['Notification'])) {
-        echo '<h1 style="columns: ;color:red">' . $_SESSION['Notification'] . '</h1>';
-        unset($_SESSION['Notification']);
-    }
-    ?>
+<?php
+if (isset($_SESSION['Notification'])) {
+    echo "<div id='bodyL' class='section'>";
+    echo '<h1 style="Color:red">' . $_SESSION['Notification'] . '</h1>';
+    unset($_SESSION['Notification']);
+}
+else
+    echo "<div id='bodyL'>";
+?>
 </div>
 
-<div id="bodyC">
+<div id="bodyC" class="section centerDefault">
     <Form name="formModifClasseur" method="post" action="Redirect/validerModifClasseur.redirect.php">
         <input type="hidden" id="idClasseur" name="idClasseur" value="<?php echo $resultat["id"] ?>">
+        <p class="titre">Modifier les informations du classeur</p>
         <label for="nom">Nom du classeur :
-            <input type="text" name="Nom" id="nom" onkeyup="validationNomClasseur(this.value)" value="<?php echo $nom ?>">
+            <input type="text" name="Nom" id="nom" onkeyup="confirmationCreationClasseur()" value="<?php echo $nom ?>">
         </label>
-        <label type="hidden" id="hNom"></label>
         <label for="pass">Mot de passe :
             <input type="password" name="Pass" id="pass" onkeyup="confirmationCreationClasseur()">
         </label>
@@ -63,7 +66,8 @@ $nom = $encryption->encrypterInfos($resultat['nom'], "d");
     </Form>
 </div>
 
-<div id="bodyR">
+<div id="bodyR" class="section">
+    <p class="titre">Validations</p>
     <label id="vNom">Le nom de classeur est valide</label>
     <label id="vMinMax">Votre mot de passe doit contenir entre 10 et 32 caractères</label>
     <label id="vLowercase">Votre mot de passe doit contenir un caractère lowercase</label>
@@ -78,8 +82,8 @@ $nom = $encryption->encrypterInfos($resultat['nom'], "d");
 </div>
 
 <div id="footerC">
-    <p>Fait par Marc-Antoine Gélinas</p>
-    <p>Dans le cadre du cours Projet Web 2018</p>
+    <a>Fait par Marc-Antoine Gélinas</a>
+    <a>Dans le cadre du cours Projet Web 2018</a>
 </div>
 
 <div id="footerR">

@@ -11,7 +11,7 @@ include_once 'Include/validerAccesPage.include.php';
 </head>
 <body class="main-Grid">
 <div id="headerL">
-    <a href="Redirect/logoClick.redirect.php" class="logo">Keyvault</a>
+    <a href="Redirect/logoClick.redirect.php" class="logo"><img src="Ressources/Logo.png"></a>
 </div>
 
 <div id="headerC">
@@ -34,7 +34,7 @@ else
 </div>
 
 <div id="bodyC" class="centerDefault section">
-    <a class="titre">Veuillez définir et générer le mot de passe</a>
+    <p class="titre">Veuillez définir et générer le mot de passe</p>
     <form name="formAjoutMdp" method="post" action="Redirect/validerAjoutMotDePasse.redirect.php">
         <label for="nom">Nom du mot de passe:
             <input type="text" name="nom" id="nom" max="255" placeholder="ex: Facebook">
@@ -63,7 +63,7 @@ else
         <button type="button" onclick="generateur()">Generer un mot de passe aléatoire</button>
 
         <label for="appercu">Apperçu :
-            <input type="text" name="appercu" id="appercu" size="32" readonly>
+            <input type="text" name="appercu" id="appercu"  readonly>
         </label>
 
         <input type="hidden" value="<?php echo $_POST['idClasseur'] ?>" id="idClasseur" name="idClasseur">

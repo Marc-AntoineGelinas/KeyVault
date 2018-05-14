@@ -21,7 +21,7 @@ unset($_SESSION['idClasseur']);
 
 <body class="main-Grid">
 <div id="headerL">
-    <a href="Redirect/logoClick.redirect.php" class="logo">Keyvault</a>
+    <a href="Redirect/logoClick.redirect.php" class="logo"><img src="Ressources/Logo.png"></a>
 </div>
 
 <div id="headerC">

@@ -1,5 +1,6 @@
 <?php
 include_once 'Include/genererSession.include.php';
+include_once 'Include/validerConnexion.include.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ include_once 'Include/genererSession.include.php';
 </head>
 <body class="main-Grid">
 <div id="headerL">
-    <a href="Redirect/logoClick.redirect.php" class="logo">Keyvault</a>
+    <a href="Redirect/logoClick.redirect.php" class="logo"><img src="Ressources/Logo.png"></a>
 </div>
 
 <div id="headerC">
@@ -38,7 +39,7 @@ include_once 'Include/genererSession.include.php';
 </div>
 
 <div id="bodyC" class="section centerDefault">
-    <h1>Création de votre compte</h1>
+    <p class="titre">Création de votre compte</p>
     <Form name="formNouveauCompte" method="post" action="Redirect/validerNouveauCompte.redirect.php">
         <label for="email">Adresse e-mail :
             <input type="text" name="email" id="email" onkeyup="validationEmail(this.value)">
@@ -53,10 +54,11 @@ include_once 'Include/genererSession.include.php';
         </label>
         <button id="btnAjout" onclick="formNouveauCompte.submit()" disabled>Créer</button>
     </Form>
-    <a href="index.php">Déjà un compte? Appuyer ici!</a>
+    <a href="connexion.php">Déjà un compte? Appuyer ici!</a>
 </div>
 
 <div id="bodyR" class="section">
+    <p class="titre">Validations</p>
     <label id="vEmail">L'addresse e-mail est valide</label>
     <label id="vMinMax">Votre mot de passe doit contenir entre 10 et 32 caractères</label>
     <label id="vLowercase">Votre mot de passe doit contenir un caractère lowercase</label>
@@ -71,7 +73,7 @@ include_once 'Include/genererSession.include.php';
 </div>
 
 <div id="footerC">
-    <a>Fait par Marc-Antoine Gélinas</a>
+    <a>Fait par Marc-Antoine Gélinas</>
     <a>Dans le cadre du cours Projet Web 2018</a>
 </div>
 

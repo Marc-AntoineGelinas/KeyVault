@@ -3,13 +3,18 @@ include_once "../Include/genererSession.include.php";
 include_once "../Include/config.include.php";
 include_once "../Classe/encryption.classe.php";
 include_once "../Classe/gestionBd.classe.php";
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 $id = $_POST['idClasseur'];
 $modif = new Gestionbd();
 $requete = new Gestionbd();
 $encryption = new encryption();
-$nom = filter_var($_POST['nom'], FILTER_SANITIZE_STRING);
-$idClasseur = $_POST['idClasseur'];
+$nom = filter_var($_POST['Nom'], FILTER_SANITIZE_STRING);
 $mdp = $_POST['Pass'];
+
+echo $nom;
+echo "<br/>";
+echo
 
 $requete = $requete->getInfosClasseur($id);
 $classeur = $requete->fetch(PDO::FETCH_ASSOC);
@@ -37,4 +42,4 @@ else
         $_SESSION['Notification'] = $message;
     }
 }
-header("Location: ../listeClasseurs.php");
+//header("Location: ../listeClasseurs.php");

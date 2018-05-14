@@ -16,7 +16,7 @@ $encryption = new encryption();
     </head>
     <body class="main-Grid">
         <div id="headerL">
-            <a href="Redirect/logoClick.redirect.php" class="logo">Keyvault</a>
+            <a href="Redirect/logoClick.redirect.php" class="logo"><img src="Ressources/Logo.png"></a>
         </div>
 
         <div id="headerC">
@@ -40,7 +40,7 @@ $encryption = new encryption();
         </div>
 
         <div id="bodyC" class="section ListeClasseur centerDefault">
-            <a class="titre">Classeur principal</a>
+            <p class="titre">Classeur principal</p>
                 <?php
                 include_once 'Include/afficherClasseurs.include.php';
                 ?>
