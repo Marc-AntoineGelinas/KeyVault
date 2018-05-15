@@ -12,13 +12,7 @@ $encryption = new encryption();
 $nom = filter_var($_POST['Nom'], FILTER_SANITIZE_STRING);
 $mdp = $_POST['Pass'];
 
-echo $nom;
-echo "<br/>";
-echo
-
-$requete = $requete->getInfosClasseur($id);
-$classeur = $requete->fetch(PDO::FETCH_ASSOC);
-$requete = new Gestionbd();
+$nom = $encryption->encrypterInfos($nom);
 
 if (strlen($mdp) == 0){
     $mdp = null;
@@ -28,6 +22,9 @@ if (strlen($mdp) == 0){
 }
 else
 {
+    $requete = $requete->getInfosClasseur($id);
+    $classeur = $requete->fetch(PDO::FETCH_ASSOC);
+    $requete = new Gestionbd();
     $requete = $requete->getInfosUser($classeur['users_informations_id']);
     $mainMdp = $requete->fetch(PDO::FETCH_ASSOC);
 
@@ -36,10 +33,10 @@ else
         $_SESSION['Notification'] = $message;
     }
     else{
-        $mdp = password_hash($mdp);
+        $mdp = password_hash($mdp, PASSWORD_DEFAULT);
         $modif->setInfosClasseur($id, $nom, $mdp);
         $message = "Les modifications ont étés apportés au classeur.";
         $_SESSION['Notification'] = $message;
     }
 }
-//header("Location: ../listeClasseurs.php");
+header("Location: ../listeClasseurs.php");

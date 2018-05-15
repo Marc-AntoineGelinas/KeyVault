@@ -2,26 +2,29 @@
 include_once "../Include/genererSession.include.php";
 include_once "../Classe/requeteSQL.classe.php";
 include_once "../Include/config.include.php";
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 $verification = new requete();
-$idClasseur = $_POST['classeur'];
+$_SESSION["idClasseur"] = $_POST['nomClasseur'];
+
 
 
 $verification = $verification->requeteSQLPDO("SELECT users_vault.id, users_vault.master
 FROM users_vault
 INNER JOIN users_informations
 ON users_vault.users_informations_id = users_informations.id
-WHERE users_informations.email = :param1 AND users_vault.id = :param2", array($_SESSION['usager'], $idClasseur), __FILE__);
+WHERE users_informations.email = :param1 AND users_vault.id = :param2", array($_SESSION['usager'], $_SESSION["idClasseur"]), __FILE__);
 
 if ($verification->rowCount() != 1){
     $message = "Ce classeur ne vous appartient pas.";
+    $_SESSION['Notification'] = $message;
     header("Location: ../listeClasseurs.php");
 }
 else
 {
     $classeur = $verification->fetch(PDO::FETCH_ASSOC);
-    $_SESSION['idClasseur'] = $classeur['id'];
     if ($classeur['master'] == null){
-        header("Location: ../classeur.php");
+        header("Location: ../modifierClasseur.php");
     }
     else{
         ?>
@@ -30,7 +33,7 @@ else
         <head>
             <meta charset="UTF-8">
 
-            <title>Key Vault - Accueil</title>
+            <title>Key Vault - Valider acces classeur</title>
             <link rel="stylesheet" type="text/css" href="../CSS/main.css">
             <link rel="stylesheet" type="text/css" href="../CSS/grid.css">
         </head>
@@ -59,9 +62,9 @@ else
 
         <div id="bodyC" class="section centerDefault">
             <p class="titre">Entrer le mot de passe du classeur</p>
-            <form  name="formLogin" method="post" action="validerMDPClasseurAcces.redirect.php">
+            <form  name="formLogin" method="post" action="validerMDPClasseurModif.redirect.php">
                 <label>Mot de passe :
-                <input type="password" name="pass" id="pass">
+                    <input type="password" name="pass" id="pass">
                 </label>
                 <button onclick="formLogin.submit();">Accèder</button>
             </form>

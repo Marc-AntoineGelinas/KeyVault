@@ -3,13 +3,11 @@ include_once 'Include/genererSession.include.php';
 include_once 'Include/validerAccesPage.include.php';
 include_once 'Classe/encryption.classe.php';
 include_once "Classe/gestionBd.classe.php";
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 $encryption = new encryption();
 $requete = new Gestionbd();
 
-$requete = $requete->getInfosClasseur($_POST['nomClasseur']);
+$requete = $requete->getInfosClasseur($_SESSION["idClasseur"]);
+unset($_SESSION["idClasseur"]);
 
 $resultat = $requete->fetch(PDO::FETCH_ASSOC);
 

@@ -23,7 +23,7 @@ foreach($resultat as $classeur){
             echo "<button onclick='formSupprClasseur.submit()'>Supprimer</button>";
         echo "</form>";
 
-        echo "<form name='formModClasseur' method='post' action='modifierClasseur.php'>";
+        echo "<form name='formModClasseur' method='post' action='Redirect/validerAccesModifClasseur.redirect.php'>";
             echo "<input type='hidden' id='idClasseur' name='nomClasseur' value=' " . $classeur['id'] . "'>";
             echo "<button onclick='formModClasseur.submit()'>Modifier</button>";
         echo "</form>";
