@@ -79,7 +79,9 @@ else
 </div>
 
 <div id="footerR">
-
+    <a href="Redirect/deconnexion.redirect.php">
+        <button>Déconnexion</button>
+    </a>
 </div>
 </body>
 </html>

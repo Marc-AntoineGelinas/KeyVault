@@ -90,7 +90,9 @@ $nom = $encryption->encrypterInfos($resultatMdp[0]['nom'], "d");
     </div>
 
     <div id="footerR">
-
+        <a href="Redirect/deconnexion.redirect.php">
+            <button>Déconnexion</button>
+        </a>
     </div>
     </body>
 </html>
