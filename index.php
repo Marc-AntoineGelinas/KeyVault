@@ -43,7 +43,7 @@ else
         <form name="formConnexion" method="post" action="connexion.php" style="display:inline;">
             <button onclick="formConnexion.submit()">Connexion</button>
         </form>
-        <form name="formNouveau" method="post" action="nouveauCompte.php.php" style="display:inline;">
+        <form name="formNouveau" method="post" action="nouveauCompte.php" style="display:inline;">
             <button onclick="formNouveau.submit()">Nouveau compte</button>
         </form>
 </div>
